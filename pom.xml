@@ -5,7 +5,7 @@
     <groupId>guiom.stream</groupId>
     <artifactId>grizzly-jersey-poc</artifactId>
     <packaging>jar</packaging>
-    <version>0.1</version>
+    <version>0.2</version>
     <name>grizzly-jersey-poc</name>
     <dependencies>
         <dependency>
@@ -42,6 +42,12 @@
                 <filtering>true</filtering>
             </resource>
         </resources>
+        <testResources>
+            <testResource>
+                <directory>src/test/resources</directory>
+                <filtering>true</filtering>
+            </testResource>
+        </testResources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

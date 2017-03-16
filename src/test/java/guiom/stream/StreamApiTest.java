@@ -18,9 +18,11 @@ public class StreamApiTest {
 
     @Before
     public void setUp() throws Exception {
-        // start the server
+        // Load properties
+        Main.loadProperties();
+        // Start the server
         server = Main.startServer();
-        // create the client
+        // Create the client
         Client c = ClientBuilder.newClient();
 
         // uncomment the following line if you want to enable
@@ -43,6 +45,6 @@ public class StreamApiTest {
     @Test
     public void testGetIt() {
         String responseMsg = target.path("stream/version").request().get(String.class);
-        assertEquals("0.1\n", responseMsg);
+        assertEquals(Main.PROPS.getProperty("version") + "\n", responseMsg);
     }
 }

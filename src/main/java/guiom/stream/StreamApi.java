@@ -20,7 +20,7 @@ public class StreamApi {
     @Path("/version")
     @Produces(MediaType.TEXT_PLAIN)
     public String version() {
-    	return "0.1\n";
+    	return Main.PROPS.getProperty("version") + "\n";
     }
     
     @GET
